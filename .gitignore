@@ -17,3 +17,7 @@
 
 # Generated kernel template files
 *.clT
+
+build/
+src/build/
+

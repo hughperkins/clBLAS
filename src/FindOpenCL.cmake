@@ -67,7 +67,7 @@ get_property( LIB64 GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS )
 
 if( LIB64 )
     find_library( OPENCL_LIBRARIES
-        NAMES OpenCL
+        NAMES OpenCL clew
         HINTS
             ${OPENCL_ROOT}/lib
             $ENV{AMDAPPSDKROOT}/lib
@@ -81,7 +81,7 @@ if( LIB64 )
     )
 else( )
     find_library( OPENCL_LIBRARIES
-        NAMES OpenCL
+        NAMES OpenCL clew
         HINTS
             ${OPENCL_ROOT}/lib
             $ENV{AMDAPPSDKROOT}/lib
