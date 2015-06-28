@@ -52,8 +52,9 @@ __kernel void %PREFIXger_C_kernel( __global %TYPE const* restrict _X, __global %
 	}
 
 	// create local memory
-  __local %TYPE%V localXV[ BH ];
-  __local %TYPE *localX = (__local %TYPE *)localXV;
+
+	__local %TYPE%V localXV[ BH ];
+	__local %TYPE *localX = (__local %TYPE *)localXV;
 	__local %TYPE localY[ BW ];
 
 	uint lID = get_local_id( 0 );
@@ -71,42 +72,42 @@ __kernel void %PREFIXger_C_kernel( __global %TYPE const* restrict _X, __global %
     uint col = (( BW * gIDx)+  tIDx);
 
 
-//    if( (gIDx != (nBlocksX-1)) && (gIDy != (nBlocksY-1)) )       // Completely vector blocks
-//    {
-//        //populate local memory
-//        for( int i = lID; i< ( BH * %V); i+= get_local_size(0) )
-//        {
-//            int idx = i + ( gIDy * BH * %V);
+    if( (gIDx != (nBlocksX-1)) && (gIDy != (nBlocksY-1)) )       // Completely vector blocks
+    {
+        //populate local memory
+        for( int i = lID; i< ( BH * %V); i+= get_local_size(0) )
+        {
+            int idx = i + ( gIDy * BH * %V);
 //            localX[ i ] = *(X + (idx * incx));
-//        }
+        }
 
-//        for( int i = lID; i< BW; i+= get_local_size(0) )
-//        {
-//            int idx = i + ( gIDx * BW);
-//            localY[ i ] = *(Y + (idx * incy));
-//        }
-//        barrier(CLK_LOCAL_MEM_FENCE);
+        for( int i = lID; i< BW; i+= get_local_size(0) )
+        {
+            int idx = i + ( gIDx * BW);
+            localY[ i ] = *(Y + (idx * incy));
+        }
+        barrier(CLK_LOCAL_MEM_FENCE);
 
-//        %TYPE%V prevA, temp;
-//        %TYPE yReg = localY[  tIDx ];
-//        %TYPE%V xReg = *(__local %TYPE%V*)(&localX[ tIDy * %V]);
+        %TYPE%V prevA, temp;
+        %TYPE yReg = localY[  tIDx ];
+        %TYPE%V xReg = *(__local %TYPE%V*)(&localX[ tIDy * %V]);
 
-//        prevA = %VLOAD( 0, ( A + col*lda + row ) );
-//        %CONJUGATE(doConj, yReg);
-//        %VMUL( temp, xReg, alpha );
-//        %VMAD( prevA, temp, yReg);
-//        %VSTORE( prevA, 0 , ( A + col*lda + row ) );
+        prevA = %VLOAD( 0, ( A + col*lda + row ) );
+        %CONJUGATE(doConj, yReg);
+        %VMUL( temp, xReg, alpha );
+        %VMAD( prevA, temp, yReg);
+        %VSTORE( prevA, 0 , ( A + col*lda + row ) );
 
-//    }
-//    else                            // Border blocks in both X & Y direction
-//    {
+    }
+    else                            // Border blocks in both X & Y direction
+    {
     	//populate local memory
         for( int i = lID; i< ( BH * %V); i+= get_local_size(0) )
         {
     		int idx = i + ( gIDy * BH * %V);
            	if ( idx < M )
     		{
-    			localX[ i ] = *(X + (idx * incx));
+//    			localX[ i ] = *(X + (idx * incx));
         	}
     	}
 
@@ -117,27 +118,32 @@ __kernel void %PREFIXger_C_kernel( __global %TYPE const* restrict _X, __global %
     		{
            		localY[ i ] = *(Y + (idx * incy));
         	}
-//    	}
+    	}
     	barrier(CLK_LOCAL_MEM_FENCE);
 
     	uint gTIDx = (gIDx * BW) + tIDx;
+//if( withinBounds ) {
         if ( gTIDx < N)  // if whithin last column
     	{
-//    		if( (row + %V - 1) < M )  // if the next V rows are still within M, then do vector math
-//	    	{
-//    			%TYPE%V prevA, temp;
-//    			%TYPE yReg = localY[  tIDx ];
-//    			%TYPE%V xReg = *(__local %TYPE%V*)(&localX[ tIDy * %V]);
+    		if( (row + %V - 1) < M )  // if the next V rows are still within M, then do vector math
+	    	{
+    			%TYPE%V prevA, temp;
+    			%TYPE yReg = localY[  tIDx ];
+    			%TYPE%V xReg = *(__local %TYPE%V*)(&localX[ tIDy * %V]);
+        //__local %TYPE%V*localXV = (__local %TYPE%V*)localX;
+//    			%TYPE%V xReg = localX[0];
+    			//%TYPE%V xReg = localXV[0];
+        //  %TYPE%V xReg = 0;
 
-//	    		prevA = %VLOAD( 0, ( A + col*lda + row ) );
-//		    	%CONJUGATE(doConj, yReg);
-//			    %VMUL( temp, xReg, alpha );
-//    			%VMAD( prevA, temp, yReg);
-//    			%VSTORE( prevA, 0 , ( A + col*lda + row ) );
+	    		prevA = %VLOAD( 0, ( A + col*lda + row ) );
+		    	%CONJUGATE(doConj, yReg);
+			    %VMUL( temp, xReg, alpha );
+    			%VMAD( prevA, temp, yReg);
+    			%VSTORE( prevA, 0 , ( A + col*lda + row ) );
 
-//    		}
-//	    	else if( row < M  )  //else do scalar multiplication
-//		    {
+    		}
+	    	else if( row < M  )  //else do scalar multiplication
+		    {
     			%TYPE xRegS, yReg, prevA, temp;
     			for( int i=row; i<M; i++ )
     			{
@@ -149,8 +155,9 @@ __kernel void %PREFIXger_C_kernel( __global %TYPE const* restrict _X, __global %
     				%MAD( prevA, temp, yReg );
 	    			A[ col*lda + i ] = prevA;
 		    	}
-//		    }
-	    }
+		    }
+//	    }
+     }
     }
 }
 \n";
@@ -194,8 +201,7 @@ __kernel void %PREFIXger_R_kernel( __global %TYPE const* restrict _X, __global %
 	}
 
     __local %TYPE localX[ BH ];
-    __local %TYPE%V localYV[ BW ];
-    __local %TYPE *localY = (__local %TYPE *)localYV;
+    __local %TYPE localY[ BW * %V ];
 
     uint lID = get_local_id( 0 );
     uint gID = get_group_id( 0 );

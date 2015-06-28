@@ -198,6 +198,7 @@ endif( )
 find_package( OpenCL )
 
 # Find Boost on the system, and configure the type of boost build we want
+if(FALSE)  # hugh disabling boost, see what happens :-)
 set( Boost_USE_MULTITHREADED ON )
 set( Boost_USE_STATIC_LIBS   ON )
 set( Boost_DETAILED_FAILURE_MSG   ON )
@@ -206,7 +207,7 @@ set( Boost_ADDITIONAL_VERSIONS "1.44.0" "1.44" "1.47.0" "1.47" )
 
 find_package( Boost 1.33.0 COMPONENTS program_options )
 message(STATUS "Boost_PROGRAM_OPTIONS_LIBRARY: ${Boost_PROGRAM_OPTIONS_LIBRARY}")
-
+endif(BOOST)
 
 if( NOT Boost_FOUND )
 	message( STATUS "The clBLAS ktest requires boost to be installed" )

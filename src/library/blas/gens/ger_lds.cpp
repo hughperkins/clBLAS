@@ -135,6 +135,9 @@ setBuildOpts(
 {
 	const SolutionStep *step = (const SolutionStep *)args;
     const CLBlasKargs *kargs = (const CLBlasKargs *)(&step->args);
+printf("get_lds.setBuildOpts\n");
+addBuildOpt( buildOptStr, BUILD_OPTS_MAXLEN, "-cl-opt-disable");
+printf("buildOptStr %s\n", buildOptStr);
 	if ( kargs->dtype == TYPE_DOUBLE || kargs->dtype == TYPE_COMPLEX_DOUBLE)
 	{
 		addBuildOpt( buildOptStr, BUILD_OPTS_MAXLEN, "-DDOUBLE_PRECISION");
@@ -246,6 +249,8 @@ generator(
 	CLBLASKernExtra *extraFlags = ( CLBLASKernExtra *)extra;
 	clblasOrder order = ( extraFlags->flags & KEXTRA_COLUMN_MAJOR) ? clblasColumnMajor: clblasRowMajor;
 	VEC_LEN = extraFlags->vecLenA;
+//  VEC_LEN=1;
+   printf("VEC_LEN %i\n", (int)VEC_LEN);
 
 	#ifdef DEBUG_GER
 	printf("GER GENERATOR called.... with %s order,  DataType %c  & Vector-Length: %d\n",

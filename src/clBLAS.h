@@ -135,14 +135,14 @@ typedef enum clblasStatus_ {
     clblasBuildProgramFailure             = CL_BUILD_PROGRAM_FAILURE,
     /* Extended error codes */
     clblasNotImplemented         = -1024, /**< Functionality is not implemented */
-    clblasNotInitialized,                 /**< clblas library is not initialized yet */
-    clblasInvalidMatA,                    /**< Matrix A is not a valid memory object */
-    clblasInvalidMatB,                    /**< Matrix B is not a valid memory object */
-    clblasInvalidMatC,                    /**< Matrix C is not a valid memory object */
-    clblasInvalidVecX,                    /**< Vector X is not a valid memory object */
-    clblasInvalidVecY,                    /**< Vector Y is not a valid memory object */
-    clblasInvalidDim,                     /**< An input dimension (M,N,K) is invalid */
-    clblasInvalidLeadDimA,                /**< Leading dimension A must not be less than the size of the first dimension */
+    clblasNotInitialized = -1023,                 /**< clblas library is not initialized yet */
+    clblasInvalidMatA =            -1022,        /**< Matrix A is not a valid memory object */
+    clblasInvalidMatB=                 -1021,   /**< Matrix B is not a valid memory object */
+    clblasInvalidMatC=    -1020        ,        /**< Matrix C is not a valid memory object */
+    clblasInvalidVecX=     -1019      ,         /**< Vector X is not a valid memory object */
+    clblasInvalidVecY=       -1018   ,          /**< Vector Y is not a valid memory object */
+    clblasInvalidDim=        -1017  ,          /**< An input dimension (M,N,K) is invalid */
+    clblasInvalidLeadDimA=    -1016,            /**< Leading dimension A must not be less than the size of the first dimension */
     clblasInvalidLeadDimB,                /**< Leading dimension B must not be less than the size of the second dimension */
     clblasInvalidLeadDimC,                /**< Leading dimension C must not be less than the size of the third dimension */
     clblasInvalidIncX,                    /**< The increment for a vector X must not be 0 */
