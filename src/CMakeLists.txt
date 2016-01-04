@@ -24,6 +24,7 @@ option( BUILD_SAMPLE "Build the sample programs" OFF )
 option( BUILD_CLIENT "Build a command line clBLAS client program with a variety of configurable parameters (dependency on Boost)" OFF )
 option( BUILD_KTEST "A command line tool for testing single clBLAS kernel" ON )
 option( BUILD_SHARED_LIBS "Build shared libraries" ON )
+option( BUILD_SHOW_WARNINGS "Show build warnings" ON )
 
 # By default test-correctness is linked and tested against ACML library.
 # However, test-correctness can instead use NETLIB as a reference library
@@ -217,11 +218,19 @@ endif()
 
 # Turn on maximum compiler verbosity
 if(CMAKE_COMPILER_IS_GNUCXX)
-    add_definitions(-pedantic -Wall -Wextra
-        -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=500
-    )
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99 -Wstrict-prototypes" CACHE STRING
-        "Default CFLAGS" FORCE)
+    if(BUILD_SHOW_WARNINGS)
+      add_definitions(-pedantic -Wall -Wextra
+          -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=500
+      )
+      set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99 -Wstrict-prototypes" CACHE STRING
+          "Default CFLAGS" FORCE)
+    else()
+      add_definitions(-w
+          -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=500
+      )
+      set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99 -w" CACHE STRING
+          "Default CFLAGS" FORCE)
+    endif(BUILD_SHOW_WARNINGS)
     # Don't use -rpath.
     set(CMAKE_SKIP_RPATH ON CACHE BOOL "Skip RPATH" FORCE)
 
