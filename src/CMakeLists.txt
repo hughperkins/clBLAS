@@ -25,6 +25,14 @@ option( BUILD_CLIENT "Build a command line clBLAS client program with a variety 
 option( BUILD_KTEST "A command line tool for testing single clBLAS kernel" ON )
 option( BUILD_SHARED_LIBS "Build shared libraries" ON )
 option( BUILD_SHOW_WARNINGS "Show build warnings" ON )
+option( ADD_RPATH "add rpath" OFF )
+
+if(ADD_RPATH)
+  # https://cmake.org/Wiki/CMake_RPATH_handling
+  SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
+  SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+  SET(CMAKE_MACOSX_RPATH TRUE)
+endif()
 
 # By default test-correctness is linked and tested against ACML library.
 # However, test-correctness can instead use NETLIB as a reference library
@@ -232,7 +240,11 @@ if(CMAKE_COMPILER_IS_GNUCXX)
           "Default CFLAGS" FORCE)
     endif(BUILD_SHOW_WARNINGS)
     # Don't use -rpath.
+    if(ADD_RPATH)
+    set(CMAKE_SKIP_RPATH OFF CACHE BOOL "Skip RPATH" FORCE)
+    else()
     set(CMAKE_SKIP_RPATH ON CACHE BOOL "Skip RPATH" FORCE)
+    endif()
 
     set(CMAKE_C_FLAGS "-m${TARGET_PLATFORM} ${CMAKE_C_FLAGS}")
     set(CMAKE_CXX_FLAGS "-m${TARGET_PLATFORM} ${CMAKE_CXX_FLAGS}")
