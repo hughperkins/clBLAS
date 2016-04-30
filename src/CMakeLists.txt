@@ -227,10 +227,10 @@ endif()
 # Turn on maximum compiler verbosity
 if(CMAKE_COMPILER_IS_GNUCXX)
     if(BUILD_SHOW_WARNINGS)
-      add_definitions(-pedantic -Wall -Wextra
+      add_definitions(-w
           -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=500
       )
-      set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99 -Wstrict-prototypes" CACHE STRING
+      set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99 -w" CACHE STRING
           "Default CFLAGS" FORCE)
     else()
       add_definitions(-w
