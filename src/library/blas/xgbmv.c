@@ -234,43 +234,43 @@ clblasCgbmv(
                   numEventsInWaitList, eventWaitList, events);
 }
 
-clblasStatus
-clblasZgbmv(
-    clblasOrder order,
-    clblasTranspose transA,
-    size_t M,
-    size_t N,
-    size_t KL,
-    size_t KU,
-    cl_double2 alpha,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    const cl_mem x,
-    size_t offx,
-    int incx,
-    cl_double2 beta,
-    cl_mem y,
-    size_t offy,
-    int incy,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-{
-    CLBlasKargs kargs;
+// clblasStatus
+// clblasZgbmv(
+//     clblasOrder order,
+//     clblasTranspose transA,
+//     size_t M,
+//     size_t N,
+//     size_t KL,
+//     size_t KU,
+//     cl_double2 alpha,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     const cl_mem x,
+//     size_t offx,
+//     int incx,
+//     cl_double2 beta,
+//     cl_mem y,
+//     size_t offy,
+//     int incy,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// {
+//     CLBlasKargs kargs;
 
-    memset(&kargs, 0, sizeof(kargs));
-    kargs.dtype = TYPE_COMPLEX_DOUBLE;
-    kargs.pigFuncID = CLBLAS_GBMV;
-    kargs.alpha.argDoubleComplex = alpha;
-    kargs.beta.argDoubleComplex = beta;
+//     memset(&kargs, 0, sizeof(kargs));
+//     kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//     kargs.pigFuncID = CLBLAS_GBMV;
+//     kargs.alpha.argDoubleComplex = alpha;
+//     kargs.beta.argDoubleComplex = beta;
 
-    return doGbmv(&kargs, order, transA, M, N, KL, KU, A, offa, lda, x, offx, incx,
-                  y, offy, incy, numCommandQueues, commandQueues,
-                  numEventsInWaitList, eventWaitList, events);
-}
+//     return doGbmv(&kargs, order, transA, M, N, KL, KU, A, offa, lda, x, offx, incx,
+//                   y, offy, incy, numCommandQueues, commandQueues,
+//                   numEventsInWaitList, eventWaitList, events);
+// }
 
 
 
