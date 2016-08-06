@@ -27,7 +27,9 @@
 #define EOVERFLOW 1000
 #endif  /* EOVERFLOW */
 
+#if (_MSC_VER < 1900) // 1900 is msvc2015 (defining this on msvc2015 causes fatal error)
 #define snprintf _snprintf
+#endif
 
 typedef long ssize_t;
 
