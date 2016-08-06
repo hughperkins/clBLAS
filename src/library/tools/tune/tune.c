@@ -696,7 +696,7 @@ initCLBlasKArgDim(CLBlasKargs *args, MatrixInfo* mi, KernelExtraFlags extra)
 void
 initKernelArg(
     MemoryPattern *pattern,
-    CLBlasKargs args,
+    const CLBlasKargs *_args,
     cl_kernel kernel,
     CLBlasKernelType kernType,
     const CLBLASKernExtra *kextra)
@@ -705,6 +705,8 @@ initKernelArg(
     unsigned int nrArgs;
     cl_int   status;
     KernelArg karg[MAX_KERNEL_ARGS];
+
+    CLBlasKargs args = *_args;
 
     memset(karg, 0, sizeof(KernelArg) * MAX_KERNEL_ARGS);
 
@@ -1443,7 +1445,7 @@ runAllKernel(
                 parCur->kernelPrepA->program, 1, &kPrepA, NULL);
         checkErrorFunc("clGetProgramInfo", status);
 
-        initKernelArg(pattern, *args, kPrepA, CLBLAS_PREP_A_KERNEL,
+        initKernelArg(pattern, args, kPrepA, CLBLAS_PREP_A_KERNEL,
                       parCur->kernelPrepA->extra);
 
         args->kernType = CLBLAS_PREP_A_KERNEL;
@@ -1456,7 +1458,7 @@ runAllKernel(
         checkErrorFunc("clGetProgramInfo", status);
 
 
-        initKernelArg(pattern, *args, kPrepB, CLBLAS_PREP_B_KERNEL,
+        initKernelArg(pattern, args, kPrepB, CLBLAS_PREP_B_KERNEL,
                       parCur->kernelPrepB->extra);
 
         args->kernType = CLBLAS_PREP_B_KERNEL;
@@ -1469,7 +1471,7 @@ runAllKernel(
         status = clCreateKernelsInProgram(parCur->kernel->program, 1, &kernel, NULL);
         checkErrorFunc("clGetProgramInfo", status);
 
-        initKernelArg(pattern, *args, kernel, CLBLAS_COMPUTING_KERNEL,
+        initKernelArg(pattern, args, kernel, CLBLAS_COMPUTING_KERNEL,
                       parCur->kernel->extra);
 
         time = runKernel(kernel, device, pattern, parCur, args,
