@@ -175,101 +175,101 @@ clblasCher2(
 						numCommandQueues, commandQueue, numEventsInWaitList, eventWaitList, events);
 	}
 
-clblasStatus
-clblasZher2(
-    clblasOrder order,
-    clblasUplo uplo,
-    size_t N,
-    cl_double2 alpha,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    const cl_mem Y,
-    size_t offy,
-    int incy,
-	cl_mem A,
-    size_t offa,
-    size_t lda,
-    cl_uint numCommandQueues,
-    cl_command_queue* commandQueue,
-    cl_uint numEventsInWaitList,
-    const cl_event* eventWaitList,
-    cl_event* events)
-    {
-		CLBlasKargs kargs;
+// clblasStatus
+// clblasZher2(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     size_t N,
+//     cl_double2 alpha,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     const cl_mem Y,
+//     size_t offy,
+//     int incy,
+// 	cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     cl_uint numCommandQueues,
+//     cl_command_queue* commandQueue,
+//     cl_uint numEventsInWaitList,
+//     const cl_event* eventWaitList,
+//     cl_event* events)
+//     {
+// 		CLBlasKargs kargs;
 
-        memset(&kargs, 0, sizeof(kargs));
-        kargs.dtype = TYPE_COMPLEX_DOUBLE;
-        kargs.alpha.argDoubleComplex = alpha;
-        kargs.pigFuncID = CLBLAS_HER2;
+//         memset(&kargs, 0, sizeof(kargs));
+//         kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//         kargs.alpha.argDoubleComplex = alpha;
+//         kargs.pigFuncID = CLBLAS_HER2;
 
-        #ifdef DEBUG_HER2
-        printf("Zher2 called\n");
-        #endif
+//         #ifdef DEBUG_HER2
+//         printf("Zher2 called\n");
+//         #endif
 
-        return doHer2(&kargs, order, uplo, N, X, offx, incx, Y, offy, incy, A, offa, lda,
-                        numCommandQueues, commandQueue, numEventsInWaitList, eventWaitList, events);
-    }
+//         return doHer2(&kargs, order, uplo, N, X, offx, incx, Y, offy, incy, A, offa, lda,
+//                         numCommandQueues, commandQueue, numEventsInWaitList, eventWaitList, events);
+//     }
 
-clblasStatus
-clblasChpr2(
-	clblasOrder order,
-    clblasUplo uplo,
-    size_t N,
-    cl_float2 alpha,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-	const cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_mem AP,
-    size_t offa,
-    cl_uint numCommandQueues,
-    cl_command_queue* commandQueue,
-    cl_uint numEventsInWaitList,
-    const cl_event* eventWaitList,
-    cl_event* events)
-	{
-		CLBlasKargs kargs;
+// clblasStatus
+// clblasChpr2(
+// 	clblasOrder order,
+//     clblasUplo uplo,
+//     size_t N,
+//     cl_float2 alpha,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+// 	const cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_mem AP,
+//     size_t offa,
+//     cl_uint numCommandQueues,
+//     cl_command_queue* commandQueue,
+//     cl_uint numEventsInWaitList,
+//     const cl_event* eventWaitList,
+//     cl_event* events)
+// 	{
+// 		CLBlasKargs kargs;
 
-        memset(&kargs, 0, sizeof(kargs));
-        kargs.dtype = TYPE_COMPLEX_FLOAT;
-        kargs.alpha.argFloatComplex = alpha;
-        kargs.pigFuncID = CLBLAS_HPR2;
+//         memset(&kargs, 0, sizeof(kargs));
+//         kargs.dtype = TYPE_COMPLEX_FLOAT;
+//         kargs.alpha.argFloatComplex = alpha;
+//         kargs.pigFuncID = CLBLAS_HPR2;
 
-		return doHer2(&kargs, order, uplo, N, X, offx, incx, Y, offy, incy, AP, offa, 0,
-						numCommandQueues, commandQueue, numEventsInWaitList, eventWaitList, events);
-	}
+// 		return doHer2(&kargs, order, uplo, N, X, offx, incx, Y, offy, incy, AP, offa, 0,
+// 						numCommandQueues, commandQueue, numEventsInWaitList, eventWaitList, events);
+// 	}
 
-clblasStatus
-clblasZhpr2(
-    clblasOrder order,
-    clblasUplo uplo,
-    size_t N,
-    cl_double2 alpha,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    const cl_mem Y,
-    size_t offy,
-    int incy,
-	cl_mem AP,
-    size_t offa,
-    cl_uint numCommandQueues,
-    cl_command_queue* commandQueue,
-    cl_uint numEventsInWaitList,
-    const cl_event* eventWaitList,
-    cl_event* events)
-    {
-		CLBlasKargs kargs;
+// clblasStatus
+// clblasZhpr2(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     size_t N,
+//     cl_double2 alpha,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     const cl_mem Y,
+//     size_t offy,
+//     int incy,
+// 	cl_mem AP,
+//     size_t offa,
+//     cl_uint numCommandQueues,
+//     cl_command_queue* commandQueue,
+//     cl_uint numEventsInWaitList,
+//     const cl_event* eventWaitList,
+//     cl_event* events)
+//     {
+// 		CLBlasKargs kargs;
 
-        memset(&kargs, 0, sizeof(kargs));
-        kargs.dtype = TYPE_COMPLEX_DOUBLE;
-        kargs.alpha.argDoubleComplex = alpha;
-        kargs.pigFuncID = CLBLAS_HPR2;
+//         memset(&kargs, 0, sizeof(kargs));
+//         kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//         kargs.alpha.argDoubleComplex = alpha;
+//         kargs.pigFuncID = CLBLAS_HPR2;
 
-        return doHer2(&kargs, order, uplo, N, X, offx, incx, Y, offy, incy, AP, offa, 0,
-                        numCommandQueues, commandQueue, numEventsInWaitList, eventWaitList, events);
-    }
+//         return doHer2(&kargs, order, uplo, N, X, offx, incx, Y, offy, incy, AP, offa, 0,
+//                         numCommandQueues, commandQueue, numEventsInWaitList, eventWaitList, events);
+//     }
 

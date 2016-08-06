@@ -227,38 +227,38 @@ clblasChbmv(
                   numEventsInWaitList, eventWaitList, events);
 }
 
-clblasStatus
-clblasZhbmv(
-    clblasOrder order,
-    clblasUplo uplo,
-    size_t N,
-    size_t K,
-    cl_double2 alpha,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    cl_double2 beta,
-    cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-{
-    CLBlasKargs kargs;
+// clblasStatus
+// clblasZhbmv(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     size_t N,
+//     size_t K,
+//     cl_double2 alpha,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_double2 beta,
+//     cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// {
+//     CLBlasKargs kargs;
 
-    memset(&kargs, 0, sizeof(kargs));
-    kargs.dtype = TYPE_COMPLEX_DOUBLE;
-    kargs.pigFuncID = CLBLAS_HBMV;
-    kargs.alpha.argDoubleComplex = alpha;
-    kargs.beta.argDoubleComplex = beta;
+//     memset(&kargs, 0, sizeof(kargs));
+//     kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//     kargs.pigFuncID = CLBLAS_HBMV;
+//     kargs.alpha.argDoubleComplex = alpha;
+//     kargs.beta.argDoubleComplex = beta;
 
-    return doSHbmv(&kargs, order, uplo, N, K, A, offa, lda, X, offx, incx,
-                  Y, offy, incy, numCommandQueues, commandQueues,
-                  numEventsInWaitList, eventWaitList, events);
-}
+//     return doSHbmv(&kargs, order, uplo, N, K, A, offa, lda, X, offx, incx,
+//                   Y, offy, incy, numCommandQueues, commandQueues,
+//                   numEventsInWaitList, eventWaitList, events);
+// }

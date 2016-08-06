@@ -151,35 +151,35 @@ clblasChpmv(
                   numEventsInWaitList, eventWaitList, events);
 }
 
-clblasStatus
-clblasZhpmv(
-    clblasOrder order,
-    clblasUplo uplo,
-    size_t N,
-    cl_double2 alpha,
-    const cl_mem AP,
-    size_t offa,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    cl_double2 beta,
-    cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-{
-    CLBlasKargs kargs;
+// clblasStatus
+// clblasZhpmv(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     size_t N,
+//     cl_double2 alpha,
+//     const cl_mem AP,
+//     size_t offa,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_double2 beta,
+//     cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// {
+//     CLBlasKargs kargs;
 
-    memset(&kargs, 0, sizeof(kargs));
-    kargs.dtype = TYPE_COMPLEX_DOUBLE;
-    kargs.alpha.argDoubleComplex = alpha;
-    kargs.beta.argDoubleComplex = beta;
+//     memset(&kargs, 0, sizeof(kargs));
+//     kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//     kargs.alpha.argDoubleComplex = alpha;
+//     kargs.beta.argDoubleComplex = beta;
 
-    return doHpmv(&kargs, order, uplo, N, AP, offa, X, offx, incx,
-                  Y, offy, incy, numCommandQueues, commandQueues,
-                  numEventsInWaitList, eventWaitList, events);
-}
+//     return doHpmv(&kargs, order, uplo, N, AP, offa, X, offx, incx,
+//                   Y, offy, incy, numCommandQueues, commandQueues,
+//                   numEventsInWaitList, eventWaitList, events);
+// }

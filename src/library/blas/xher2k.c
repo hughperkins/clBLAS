@@ -197,50 +197,50 @@ clblasCher2k(
                     numEventsInWaitList, eventWaitList, events);
 }
 
-clblasStatus
-clblasZher2k(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose trans,
-    size_t N,
-    size_t K,
-    DoubleComplex alpha,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    const cl_mem B,
-    size_t offb,
-    size_t ldb,
-    cl_double beta,
-    cl_mem C,
-    size_t offc,
-    size_t ldc,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-{
-    CLBlasKargs kargs;
-    DoubleComplex fBeta;
+// clblasStatus
+// clblasZher2k(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose trans,
+//     size_t N,
+//     size_t K,
+//     DoubleComplex alpha,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     const cl_mem B,
+//     size_t offb,
+//     size_t ldb,
+//     cl_double beta,
+//     cl_mem C,
+//     size_t offc,
+//     size_t ldc,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// {
+//     CLBlasKargs kargs;
+//     DoubleComplex fBeta;
 
-    memset(&kargs, 0, sizeof(kargs));
+//     memset(&kargs, 0, sizeof(kargs));
 
-    CREAL(fBeta)  = beta;
-    CIMAG(fBeta)  = 0.0f;
+//     CREAL(fBeta)  = beta;
+//     CIMAG(fBeta)  = 0.0f;
 
-    kargs.alpha.argDoubleComplex = alpha;
-    kargs.beta.argDoubleComplex = fBeta;
+//     kargs.alpha.argDoubleComplex = alpha;
+//     kargs.beta.argDoubleComplex = fBeta;
 
-    kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//     kargs.dtype = TYPE_COMPLEX_DOUBLE;
 
-    if( order == clblasRowMajor )
-    {
-        CIMAG( kargs.alpha.argDoubleComplex ) *= -1.0;
-    }
+//     if( order == clblasRowMajor )
+//     {
+//         CIMAG( kargs.alpha.argDoubleComplex ) *= -1.0;
+//     }
 
-    return doHer2k(&kargs, order, uplo, trans, N, K, A, offa, lda, B, offb, ldb,
-                    C, offc, ldc, numCommandQueues, commandQueues,
-                    numEventsInWaitList, eventWaitList, events);
-}
+//     return doHer2k(&kargs, order, uplo, trans, N, K, A, offa, lda, B, offb, ldb,
+//                     C, offc, ldc, numCommandQueues, commandQueues,
+//                     numEventsInWaitList, eventWaitList, events);
+// }
 

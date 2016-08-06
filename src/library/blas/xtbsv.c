@@ -780,45 +780,45 @@ clblasCtbsv(
                    numEventsInWaitList, eventWaitList, events);
 }
 
-clblasStatus
-clblasZtbsv(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose trans,
-    clblasDiag diag,
-    size_t N,
-    size_t K,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    cl_mem X,
-    size_t offx,
-    int incx,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-{
-    CLBlasKargs kargs;
-    DoubleComplex alpha, beta;
-    #ifdef DEBUG_TBSV
-    printf("ZTBSV Called\n");
-    #endif
+// clblasStatus
+// clblasZtbsv(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose trans,
+//     clblasDiag diag,
+//     size_t N,
+//     size_t K,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// {
+//     CLBlasKargs kargs;
+//     DoubleComplex alpha, beta;
+//     #ifdef DEBUG_TBSV
+//     printf("ZTBSV Called\n");
+//     #endif
 
-    memset(&kargs, 0, sizeof(kargs));
-    kargs.dtype = TYPE_COMPLEX_DOUBLE;
-    kargs.pigFuncID = CLBLAS_TBSV;
+//     memset(&kargs, 0, sizeof(kargs));
+//     kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//     kargs.pigFuncID = CLBLAS_TBSV;
 
-    CREAL(alpha) = -1.0;
-    CIMAG(alpha) = 0.0;
-    CREAL(beta) = 1.0;
-    CIMAG(beta) = 0.0;
+//     CREAL(alpha) = -1.0;
+//     CIMAG(alpha) = 0.0;
+//     CREAL(beta) = 1.0;
+//     CIMAG(beta) = 0.0;
 
-    kargs.alpha.argDoubleComplex = alpha;
-    kargs.beta.argDoubleComplex = beta;
+//     kargs.alpha.argDoubleComplex = alpha;
+//     kargs.beta.argDoubleComplex = beta;
 
-    return doTbsv(&kargs, order, uplo, trans, diag, N, K, A, offa, lda, X, offx, incx, numCommandQueues, commandQueues,
-                   numEventsInWaitList, eventWaitList, events);
-}
+//     return doTbsv(&kargs, order, uplo, trans, diag, N, K, A, offa, lda, X, offx, incx, numCommandQueues, commandQueues,
+//                    numEventsInWaitList, eventWaitList, events);
+// }
 

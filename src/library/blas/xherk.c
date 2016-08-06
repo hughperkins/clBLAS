@@ -168,44 +168,44 @@ clblasCherk(
                     numEventsInWaitList, eventWaitList, events);
 }
 
-clblasStatus
-clblasZherk(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose transA,
-    size_t N,
-    size_t K,
-    double alpha,
-    const cl_mem A,
-    size_t offA,
-    size_t lda,
-    double beta,
-    cl_mem C,
-    size_t offC,
-    size_t ldc,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-{
-    CLBlasKargs kargs;
-    DoubleComplex fAlpha, fBeta;
+// clblasStatus
+// clblasZherk(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose transA,
+//     size_t N,
+//     size_t K,
+//     double alpha,
+//     const cl_mem A,
+//     size_t offA,
+//     size_t lda,
+//     double beta,
+//     cl_mem C,
+//     size_t offC,
+//     size_t ldc,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// {
+//     CLBlasKargs kargs;
+//     DoubleComplex fAlpha, fBeta;
 
-    memset(&kargs, 0, sizeof(kargs));
+//     memset(&kargs, 0, sizeof(kargs));
 
-    CREAL(fAlpha) = alpha;
-    CIMAG(fAlpha) = 0.0f;
-    CREAL(fBeta)  = beta;
-    CIMAG(fBeta)  = 0.0f;
+//     CREAL(fAlpha) = alpha;
+//     CIMAG(fAlpha) = 0.0f;
+//     CREAL(fBeta)  = beta;
+//     CIMAG(fBeta)  = 0.0f;
 
-    kargs.alpha.argDoubleComplex = fAlpha;
-    kargs.beta.argDoubleComplex = fBeta;
+//     kargs.alpha.argDoubleComplex = fAlpha;
+//     kargs.beta.argDoubleComplex = fBeta;
 
-    kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//     kargs.dtype = TYPE_COMPLEX_DOUBLE;
 
-    return doHerk(&kargs, order, uplo, transA, N, K, A, offA, lda,
-                    C, offC, ldc, numCommandQueues, commandQueues,
-                    numEventsInWaitList, eventWaitList, events);
-}
+//     return doHerk(&kargs, order, uplo, transA, N, K, A, offA, lda,
+//                     C, offC, ldc, numCommandQueues, commandQueues,
+//                     numEventsInWaitList, eventWaitList, events);
+// }
 

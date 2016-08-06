@@ -213,38 +213,38 @@ clblasCsyr2k(
                    numEventsInWaitList, eventWaitList, events);
 }
 
-clblasStatus
-clblasZsyr2k(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose transAB,
-    size_t N,
-    size_t K,
-    DoubleComplex alpha,
-    const cl_mem A,
-    size_t offA,
-    size_t lda,
-    const cl_mem B,
-    size_t offB,
-    size_t ldb,
-    DoubleComplex beta,
-    cl_mem C,
-    size_t offC,
-    size_t ldc,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-{
-    CLBlasKargs kargs;
+// clblasStatus
+// clblasZsyr2k(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose transAB,
+//     size_t N,
+//     size_t K,
+//     DoubleComplex alpha,
+//     const cl_mem A,
+//     size_t offA,
+//     size_t lda,
+//     const cl_mem B,
+//     size_t offB,
+//     size_t ldb,
+//     DoubleComplex beta,
+//     cl_mem C,
+//     size_t offC,
+//     size_t ldc,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// {
+//     CLBlasKargs kargs;
 
-    memset(&kargs, 0, sizeof(kargs));
-    kargs.alpha.argDoubleComplex = alpha;
-    kargs.beta.argDoubleComplex = beta;
-    kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//     memset(&kargs, 0, sizeof(kargs));
+//     kargs.alpha.argDoubleComplex = alpha;
+//     kargs.beta.argDoubleComplex = beta;
+//     kargs.dtype = TYPE_COMPLEX_DOUBLE;
 
-    return doSyr2k(&kargs, order, uplo, transAB, N, K, A, offA, lda, B, offB,
-                   ldb, C, offC, ldc, numCommandQueues, commandQueues,
-                   numEventsInWaitList, eventWaitList, events);
-}
+//     return doSyr2k(&kargs, order, uplo, transAB, N, K, A, offA, lda, B, offB,
+//                    ldb, C, offC, ldc, numCommandQueues, commandQueues,
+//                    numEventsInWaitList, eventWaitList, events);
+// }

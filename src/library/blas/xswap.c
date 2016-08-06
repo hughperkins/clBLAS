@@ -199,30 +199,30 @@ clblasCswap(
 						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
 	}
 
-clblasStatus
-clblasZswap(
-    size_t N,
-    cl_mem X,
-    size_t offx,
-    int incx,
-    cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-	{
-		CLBlasKargs kargs;
+// clblasStatus
+// clblasZswap(
+//     size_t N,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// 	{
+// 		CLBlasKargs kargs;
 
-		#ifdef DEBUG_SWAP
-		printf("\nZSWAP Called\n");
-		#endif
+// 		#ifdef DEBUG_SWAP
+// 		printf("\nZSWAP Called\n");
+// 		#endif
 
-		memset(&kargs, 0, sizeof(kargs));
-		kargs.dtype = TYPE_COMPLEX_DOUBLE;
+// 		memset(&kargs, 0, sizeof(kargs));
+// 		kargs.dtype = TYPE_COMPLEX_DOUBLE;
 
-		return doSwap(&kargs, N, X, offx, incx, Y, offy, incy,
-						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
-	}
+// 		return doSwap(&kargs, N, X, offx, incx, Y, offy, incy,
+// 						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
+// 	}

@@ -204,27 +204,27 @@ clblasCrotg(
 						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
 	}
 
-clblasStatus
-clblasZrotg(
-    cl_mem CA,
-    size_t offCA,
-    cl_mem CB,
-    size_t offCB,
-    cl_mem C,
-    size_t offC,
-    cl_mem S,
-    size_t offS,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-	{
-		CLBlasKargs kargs;
+// clblasStatus
+// clblasZrotg(
+//     cl_mem CA,
+//     size_t offCA,
+//     cl_mem CB,
+//     size_t offCB,
+//     cl_mem C,
+//     size_t offC,
+//     cl_mem S,
+//     size_t offS,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// 	{
+// 		CLBlasKargs kargs;
 
-		memset(&kargs, 0, sizeof(kargs));
-		kargs.dtype = TYPE_COMPLEX_DOUBLE;
+// 		memset(&kargs, 0, sizeof(kargs));
+// 		kargs.dtype = TYPE_COMPLEX_DOUBLE;
 
-		return doRotg(&kargs, CA, offCA, CB, offCB, C, offC, S, offS,
-						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
-	}
+// 		return doRotg(&kargs, CA, offCA, CB, offCB, C, offC, S, offS,
+// 						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
+// 	}

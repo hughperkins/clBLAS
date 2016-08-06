@@ -198,36 +198,36 @@ clblasCsyrk(
                    numEventsInWaitList, eventWaitList, events);
 }
 
-clblasStatus
-clblasZsyrk(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose transA,
-    size_t N,
-    size_t K,
-    DoubleComplex alpha,
-    const cl_mem A,
-    size_t offA,
-    size_t lda,
-    DoubleComplex beta,
-    cl_mem C,
-    size_t offC,
-    size_t ldc,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-{
-    CLBlasKargs kargs;
+// clblasStatus
+// clblasZsyrk(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose transA,
+//     size_t N,
+//     size_t K,
+//     DoubleComplex alpha,
+//     const cl_mem A,
+//     size_t offA,
+//     size_t lda,
+//     DoubleComplex beta,
+//     cl_mem C,
+//     size_t offC,
+//     size_t ldc,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// {
+//     CLBlasKargs kargs;
 
-    memset(&kargs, 0, sizeof(kargs));
-    kargs.alpha.argDoubleComplex = alpha;
-    kargs.beta.argDoubleComplex = beta;
-    kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//     memset(&kargs, 0, sizeof(kargs));
+//     kargs.alpha.argDoubleComplex = alpha;
+//     kargs.beta.argDoubleComplex = beta;
+//     kargs.dtype = TYPE_COMPLEX_DOUBLE;
 
-    return doSyrk(&kargs, order, uplo, transA, N, K, A, offA, lda,
-                   C, offC, ldc, numCommandQueues, commandQueues,
-                   numEventsInWaitList, eventWaitList, events);
-}
+//     return doSyrk(&kargs, order, uplo, transA, N, K, A, offA, lda,
+//                    C, offC, ldc, numCommandQueues, commandQueues,
+//                    numEventsInWaitList, eventWaitList, events);
+// }
 

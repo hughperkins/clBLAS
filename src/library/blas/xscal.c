@@ -188,32 +188,32 @@ clblasCscal(
 						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
 	}
 
-clblasStatus
-clblasZscal(
-    size_t N,
-    cl_double2 alpha,
-    cl_mem X,
-    size_t offx,
-    int incx,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-	{
-		CLBlasKargs kargs;
+// clblasStatus
+// clblasZscal(
+//     size_t N,
+//     cl_double2 alpha,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// 	{
+// 		CLBlasKargs kargs;
 
-		#ifdef DEBUG_SCAL
-		printf("\nZSCAL Called\n");
-		#endif
+// 		#ifdef DEBUG_SCAL
+// 		printf("\nZSCAL Called\n");
+// 		#endif
 
-		memset(&kargs, 0, sizeof(kargs));
-		kargs.dtype = TYPE_COMPLEX_DOUBLE;
-        kargs.alpha.argDoubleComplex = alpha;
+// 		memset(&kargs, 0, sizeof(kargs));
+// 		kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//         kargs.alpha.argDoubleComplex = alpha;
 
-		return doScal(&kargs, N, X, offx, incx,
-						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
-	}
+// 		return doScal(&kargs, N, X, offx, incx,
+// 						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
+// 	}
 
 clblasStatus
 clblasCsscal(
@@ -245,33 +245,33 @@ clblasCsscal(
         return doScal(&kargs, N, X, offx, incx, numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
     }
 
-clblasStatus
-clblasZdscal(
-    size_t N,
-    double alpha,
-    cl_mem X,
-    size_t offx,
-    int incx,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-    {
-         CLBlasKargs kargs;
-        DoubleComplex fAlpha;
+// clblasStatus
+// clblasZdscal(
+//     size_t N,
+//     double alpha,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+//     {
+//          CLBlasKargs kargs;
+//         DoubleComplex fAlpha;
 
-        #ifdef DEBUG_SSCAL
-        printf("\nZDSCAL Called\n");
-        #endif
+//         #ifdef DEBUG_SSCAL
+//         printf("\nZDSCAL Called\n");
+//         #endif
 
-        CREAL(fAlpha) = alpha;
-        CIMAG(fAlpha) = 0.0f;
+//         CREAL(fAlpha) = alpha;
+//         CIMAG(fAlpha) = 0.0f;
 
-        memset(&kargs, 0, sizeof(kargs));
-        kargs.alpha.argDoubleComplex = fAlpha;
-        kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//         memset(&kargs, 0, sizeof(kargs));
+//         kargs.alpha.argDoubleComplex = fAlpha;
+//         kargs.dtype = TYPE_COMPLEX_DOUBLE;
 
-        return doScal(&kargs, N, X, offx, incx, numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
-    }
+//         return doScal(&kargs, N, X, offx, incx, numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
+//     }
 

@@ -211,35 +211,35 @@ clblasCtrmm(
                   numEventsInWaitList, eventWaitList, events);
 }
 
-clblasStatus
-clblasZtrmm(
-    clblasOrder order,
-    clblasSide side,
-    clblasUplo uplo,
-    clblasTranspose transA,
-    clblasDiag diag,
-    size_t M,
-    size_t N,
-    DoubleComplex alpha,
-    const cl_mem A,
-    size_t offA,
-    size_t lda,
-    cl_mem B,
-    size_t offB,
-    size_t ldb,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-{
-    CLBlasKargs kargs;
+// clblasStatus
+// clblasZtrmm(
+//     clblasOrder order,
+//     clblasSide side,
+//     clblasUplo uplo,
+//     clblasTranspose transA,
+//     clblasDiag diag,
+//     size_t M,
+//     size_t N,
+//     DoubleComplex alpha,
+//     const cl_mem A,
+//     size_t offA,
+//     size_t lda,
+//     cl_mem B,
+//     size_t offB,
+//     size_t ldb,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// {
+//     CLBlasKargs kargs;
 
-    memset(&kargs, 0, sizeof(kargs));
-    kargs.dtype = TYPE_COMPLEX_DOUBLE;
-    kargs.alpha.argDoubleComplex = alpha;
+//     memset(&kargs, 0, sizeof(kargs));
+//     kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//     kargs.alpha.argDoubleComplex = alpha;
 
-    return doTrmm(&kargs, order, side, uplo, transA, diag, M, N, A, offA, lda,
-                  B, offB, ldb, numCommandQueues, commandQueues,
-                  numEventsInWaitList, eventWaitList, events);
-}
+//     return doTrmm(&kargs, order, side, uplo, transA, diag, M, N, A, offA, lda,
+//                   B, offB, ldb, numCommandQueues, commandQueues,
+//                   numEventsInWaitList, eventWaitList, events);
+// }

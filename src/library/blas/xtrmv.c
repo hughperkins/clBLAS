@@ -253,71 +253,71 @@ clblasCtrmv(
                    numEventsInWaitList, eventWaitList, events);
 }
 
-clblasStatus
-clblasZtrmv(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose trans,
-    clblasDiag diag,
-    size_t N,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    cl_mem X,
-    size_t offx,
-    int incx,
-	cl_mem scratchBuff,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-{
-    CLBlasKargs kargs;
-	#ifdef DEBUG_TRMV
-	printf("ZTRMV called\n");
-	#endif
+// clblasStatus
+// clblasZtrmv(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose trans,
+//     clblasDiag diag,
+//     size_t N,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+// 	cl_mem scratchBuff,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// {
+//     CLBlasKargs kargs;
+// 	#ifdef DEBUG_TRMV
+// 	printf("ZTRMV called\n");
+// 	#endif
 
-    memset(&kargs, 0, sizeof(kargs));
-    kargs.dtype = TYPE_COMPLEX_DOUBLE;
-    kargs.pigFuncID = CLBLAS_TRMV;
+//     memset(&kargs, 0, sizeof(kargs));
+//     kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//     kargs.pigFuncID = CLBLAS_TRMV;
 
-    return doTrmv(&kargs, order, uplo, trans, diag, N, A, offa, lda, X, offx, incx, scratchBuff, numCommandQueues, commandQueues,
-                   numEventsInWaitList, eventWaitList, events);
-}
+//     return doTrmv(&kargs, order, uplo, trans, diag, N, A, offa, lda, X, offx, incx, scratchBuff, numCommandQueues, commandQueues,
+//                    numEventsInWaitList, eventWaitList, events);
+// }
 
 
-clblasStatus
-clblasStpmv(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose trans,
-    clblasDiag diag,
-    size_t N,
-    const cl_mem AP,
-    size_t offa,
-    cl_mem X,
-    size_t offx,
-    int incx,
-	cl_mem scratchBuff,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-{
-    CLBlasKargs kargs;
-	#ifdef DEBUG_TPMV
-	printf("STPMV Called\n");
-	#endif
+// clblasStatus
+// clblasStpmv(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose trans,
+//     clblasDiag diag,
+//     size_t N,
+//     const cl_mem AP,
+//     size_t offa,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+// 	cl_mem scratchBuff,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// {
+//     CLBlasKargs kargs;
+// 	#ifdef DEBUG_TPMV
+// 	printf("STPMV Called\n");
+// 	#endif
 
-    memset(&kargs, 0, sizeof(kargs));
-    kargs.dtype = TYPE_FLOAT;
-    kargs.pigFuncID = CLBLAS_TPMV;
+//     memset(&kargs, 0, sizeof(kargs));
+//     kargs.dtype = TYPE_FLOAT;
+//     kargs.pigFuncID = CLBLAS_TPMV;
 
-    return doTrmv(&kargs, order, uplo, trans, diag, N, AP, offa, 0 /* lda as zero for packed */, X, offx, incx, scratchBuff, numCommandQueues, commandQueues,
-                   numEventsInWaitList, eventWaitList, events);
-}
+//     return doTrmv(&kargs, order, uplo, trans, diag, N, AP, offa, 0 /* lda as zero for packed */, X, offx, incx, scratchBuff, numCommandQueues, commandQueues,
+//                    numEventsInWaitList, eventWaitList, events);
+// }
 
 clblasStatus
 clblasDtpmv(
@@ -384,34 +384,34 @@ clblasCtpmv(
                    numEventsInWaitList, eventWaitList, events);
 }
 
-clblasStatus
-clblasZtpmv(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose trans,
-    clblasDiag diag,
-    size_t N,
-    const cl_mem AP,
-    size_t offa,
-    cl_mem X,
-    size_t offx,
-    int incx,
-	cl_mem scratchBuff,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-{
-    CLBlasKargs kargs;
-	#ifdef DEBUG_TPMV
-	printf("ZTPMV called\n");
-	#endif
+// clblasStatus
+// clblasZtpmv(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose trans,
+//     clblasDiag diag,
+//     size_t N,
+//     const cl_mem AP,
+//     size_t offa,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+// 	cl_mem scratchBuff,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// {
+//     CLBlasKargs kargs;
+// 	#ifdef DEBUG_TPMV
+// 	printf("ZTPMV called\n");
+// 	#endif
 
-    memset(&kargs, 0, sizeof(kargs));
-    kargs.dtype = TYPE_COMPLEX_DOUBLE;
-    kargs.pigFuncID = CLBLAS_TPMV;
+//     memset(&kargs, 0, sizeof(kargs));
+//     kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//     kargs.pigFuncID = CLBLAS_TPMV;
 
-    return doTrmv(&kargs, order, uplo, trans, diag, N, AP, offa, 0, X, offx, incx, scratchBuff, numCommandQueues, commandQueues,
-                   numEventsInWaitList, eventWaitList, events);
-}
+//     return doTrmv(&kargs, order, uplo, trans, diag, N, AP, offa, 0, X, offx, incx, scratchBuff, numCommandQueues, commandQueues,
+//                    numEventsInWaitList, eventWaitList, events);
+// }

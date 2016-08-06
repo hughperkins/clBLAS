@@ -195,30 +195,30 @@ clblasCsrot(
 						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
 	}
 
-clblasStatus
-clblasZdrot(
-    size_t N,
-    cl_mem X,
-    size_t offx,
-    int incx,
-    cl_mem Y,
-    size_t offy,
-    int incy,
-    double C,
-    double S,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-	{
-		CLBlasKargs kargs;
+// clblasStatus
+// clblasZdrot(
+//     size_t N,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     double C,
+//     double S,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// 	{
+// 		CLBlasKargs kargs;
 
-		memset(&kargs, 0, sizeof(kargs));
-		kargs.dtype = TYPE_COMPLEX_DOUBLE;
-        kargs.alpha.argDouble = C;
-        kargs.beta.argDouble = S;
+// 		memset(&kargs, 0, sizeof(kargs));
+// 		kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//         kargs.alpha.argDouble = C;
+//         kargs.beta.argDouble = S;
 
-		return doRot(&kargs, N, X, offx, incx, Y, offy, incy,
-						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
-	}
+// 		return doRot(&kargs, N, X, offx, incx, Y, offy, incy,
+// 						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
+// 	}
