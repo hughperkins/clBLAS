@@ -212,32 +212,32 @@ clblasCaxpy(
 						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
 	}
 
-clblasStatus
-clblasZaxpy(
-    size_t N,
-    cl_double2 alpha,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-	{
-		CLBlasKargs kargs;
+// clblasStatus
+// clblasZaxpy(
+//     size_t N,
+//     cl_double2 alpha,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// 	{
+// 		CLBlasKargs kargs;
 
-		#ifdef DEBUG_AXPY
-		printf("\nZAXPY Called\n");
-		#endif
+// 		#ifdef DEBUG_AXPY
+// 		printf("\nZAXPY Called\n");
+// 		#endif
 
-		memset(&kargs, 0, sizeof(kargs));
-		kargs.dtype = TYPE_COMPLEX_DOUBLE;
-        kargs.alpha.argDoubleComplex = alpha;
+// 		memset(&kargs, 0, sizeof(kargs));
+// 		kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//         kargs.alpha.argDoubleComplex = alpha;
 
-		return doAxpy(&kargs, N, X, offx, incx, Y, offy, incy,
-						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
-	}
+// 		return doAxpy(&kargs, N, X, offx, incx, Y, offy, incy,
+// 						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
+// 	}

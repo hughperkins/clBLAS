@@ -254,115 +254,115 @@ clblasCgeru(
 						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
 	}
 
-clblasStatus
-clblasZgeru(
-    clblasOrder order,
-    size_t M,
-    size_t N,
-    cl_double2 alpha,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    const cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_mem A,
-    size_t offa,
-    size_t lda,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-	{
-		CLBlasKargs kargs;
-		int doConj;
+// clblasStatus
+// clblasZgeru(
+//     clblasOrder order,
+//     size_t M,
+//     size_t N,
+//     cl_double2 alpha,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     const cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// 	{
+// 		CLBlasKargs kargs;
+// 		int doConj;
 
-		#ifdef DEBUG_GER
-		printf("\nZGERU Called\n");
-		#endif
+// 		#ifdef DEBUG_GER
+// 		printf("\nZGERU Called\n");
+// 		#endif
 
-		memset(&kargs, 0, sizeof(kargs));
-		kargs.dtype = TYPE_COMPLEX_DOUBLE;
-		kargs.alpha.argDoubleComplex = alpha;
-		doConj = 0;
+// 		memset(&kargs, 0, sizeof(kargs));
+// 		kargs.dtype = TYPE_COMPLEX_DOUBLE;
+// 		kargs.alpha.argDoubleComplex = alpha;
+// 		doConj = 0;
 
-		return doGer(&kargs, order, M, N, X, offx, incx, Y, offy, incy, A, offa, lda, doConj,
-						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
-	}
+// 		return doGer(&kargs, order, M, N, X, offx, incx, Y, offy, incy, A, offa, lda, doConj,
+// 						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
+// 	}
 
-clblasStatus
-clblasCgerc(
-    clblasOrder order,
-    size_t M,
-    size_t N,
-    cl_float2 alpha,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    const cl_mem Y,
-    size_t offy,
-    int  incy,
-    cl_mem A,
-    size_t offa,
-    size_t lda,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-	{
-		CLBlasKargs kargs;
-		int doConj;
+// clblasStatus
+// clblasCgerc(
+//     clblasOrder order,
+//     size_t M,
+//     size_t N,
+//     cl_float2 alpha,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     const cl_mem Y,
+//     size_t offy,
+//     int  incy,
+//     cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// 	{
+// 		CLBlasKargs kargs;
+// 		int doConj;
 
-		#ifdef DEBUG_GER
-		printf("\nCGERC Called\n");
-		#endif
+// 		#ifdef DEBUG_GER
+// 		printf("\nCGERC Called\n");
+// 		#endif
 
-		memset(&kargs, 0, sizeof(kargs));
-		kargs.dtype = TYPE_COMPLEX_FLOAT;
-		kargs.alpha.argFloatComplex = alpha;
-		doConj = 1;
+// 		memset(&kargs, 0, sizeof(kargs));
+// 		kargs.dtype = TYPE_COMPLEX_FLOAT;
+// 		kargs.alpha.argFloatComplex = alpha;
+// 		doConj = 1;
 
-		return doGer(&kargs, order, M, N, X, offx, incx, Y, offy, incy, A, offa, lda, doConj,
-						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
-	}
+// 		return doGer(&kargs, order, M, N, X, offx, incx, Y, offy, incy, A, offa, lda, doConj,
+// 						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
+// 	}
 
-clblasStatus
-clblasZgerc(
-    clblasOrder order,
-    size_t M,
-    size_t N,
-    cl_double2 alpha,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    const cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_mem A,
-    size_t offa,
-    size_t lda,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-	{
-		CLBlasKargs kargs;
-		int doConj;
+// clblasStatus
+// clblasZgerc(
+//     clblasOrder order,
+//     size_t M,
+//     size_t N,
+//     cl_double2 alpha,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     const cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// 	{
+// 		CLBlasKargs kargs;
+// 		int doConj;
 
-		#ifdef DEBUG_GER
-		printf("\nZGERC Called\n");
-		#endif
+// 		#ifdef DEBUG_GER
+// 		printf("\nZGERC Called\n");
+// 		#endif
 
-		memset(&kargs, 0, sizeof(kargs));
-		kargs.dtype = TYPE_COMPLEX_DOUBLE;
-		kargs.alpha.argDoubleComplex = alpha;
-		doConj = 1;
+// 		memset(&kargs, 0, sizeof(kargs));
+// 		kargs.dtype = TYPE_COMPLEX_DOUBLE;
+// 		kargs.alpha.argDoubleComplex = alpha;
+// 		doConj = 1;
 
-		return doGer(&kargs, order, M, N, X, offx, incx, Y, offy, incy, A, offa, lda, doConj,
-						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
-	}
+// 		return doGer(&kargs, order, M, N, X, offx, incx, Y, offy, incy, A, offa, lda, doConj,
+// 						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
+// 	}
 
 

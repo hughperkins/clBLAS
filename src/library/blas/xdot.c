@@ -250,101 +250,101 @@ clblasCdotu(
                     numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
 }
 
-clblasStatus
-clblasZdotu(
-    size_t N,
-    cl_mem dotProduct,
-    size_t offDP,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    const cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_mem scratchBuff,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-{
-    CLBlasKargs kargs;
-    int doConj;
-    #ifdef DEBUG_DOT
-    printf("ZDOTU Called\n");
-    #endif
+// clblasStatus
+// clblasZdotu(
+//     size_t N,
+//     cl_mem dotProduct,
+//     size_t offDP,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     const cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_mem scratchBuff,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// {
+//     CLBlasKargs kargs;
+//     int doConj;
+//     #ifdef DEBUG_DOT
+//     printf("ZDOTU Called\n");
+//     #endif
 
-    memset(&kargs, 0, sizeof(kargs));
-    kargs.pigFuncID = CLBLAS_DOT;
-    kargs.dtype = TYPE_COMPLEX_DOUBLE;
-    doConj = 0;
+//     memset(&kargs, 0, sizeof(kargs));
+//     kargs.pigFuncID = CLBLAS_DOT;
+//     kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//     doConj = 0;
 
-    return doDot(&kargs, N, dotProduct, offDP, X, offx, incx, Y, offy, incy, scratchBuff, doConj,
-                    numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
-}
+//     return doDot(&kargs, N, dotProduct, offDP, X, offx, incx, Y, offy, incy, scratchBuff, doConj,
+//                     numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
+// }
 
-clblasStatus
-clblasCdotc(
-    size_t N,
-    cl_mem dotProduct,
-    size_t offDP,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    const cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_mem scratchBuff,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-{
-    CLBlasKargs kargs;
-    int doConj;
-    #ifdef DEBUG_DOT
-    printf("CDOTU Called\n");
-    #endif
+// clblasStatus
+// clblasCdotc(
+//     size_t N,
+//     cl_mem dotProduct,
+//     size_t offDP,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     const cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_mem scratchBuff,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// {
+//     CLBlasKargs kargs;
+//     int doConj;
+//     #ifdef DEBUG_DOT
+//     printf("CDOTU Called\n");
+//     #endif
 
-    memset(&kargs, 0, sizeof(kargs));
-    kargs.pigFuncID = CLBLAS_DOT;
-    kargs.dtype = TYPE_COMPLEX_FLOAT;
-    doConj = 1;
+//     memset(&kargs, 0, sizeof(kargs));
+//     kargs.pigFuncID = CLBLAS_DOT;
+//     kargs.dtype = TYPE_COMPLEX_FLOAT;
+//     doConj = 1;
 
-    return doDot(&kargs, N, dotProduct, offDP, X, offx, incx, Y, offy, incy, scratchBuff, doConj,
-                    numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
-}
+//     return doDot(&kargs, N, dotProduct, offDP, X, offx, incx, Y, offy, incy, scratchBuff, doConj,
+//                     numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
+// }
 
-clblasStatus
-clblasZdotc(
-    size_t N,
-    cl_mem dotProduct,
-    size_t offDP,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    const cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_mem scratchBuff,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-{
-    CLBlasKargs kargs;
-    int doConj;
-    #ifdef DEBUG_DOT
-    printf("ZDOTU Called\n");
-    #endif
+// clblasStatus
+// clblasZdotc(
+//     size_t N,
+//     cl_mem dotProduct,
+//     size_t offDP,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     const cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_mem scratchBuff,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// {
+//     CLBlasKargs kargs;
+//     int doConj;
+//     #ifdef DEBUG_DOT
+//     printf("ZDOTU Called\n");
+//     #endif
 
-    memset(&kargs, 0, sizeof(kargs));
-    kargs.pigFuncID = CLBLAS_DOT;
-    kargs.dtype = TYPE_COMPLEX_DOUBLE;
-    doConj = 1;
+//     memset(&kargs, 0, sizeof(kargs));
+//     kargs.pigFuncID = CLBLAS_DOT;
+//     kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//     doConj = 1;
 
-    return doDot(&kargs, N, dotProduct, offDP, X, offx, incx, Y, offy, incy, scratchBuff, doConj,
-                    numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
-}
+//     return doDot(&kargs, N, dotProduct, offDP, X, offx, incx, Y, offy, incy, scratchBuff, doConj,
+//                     numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
+// }

@@ -199,30 +199,30 @@ clblasCcopy(
 						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
 	}
 
-clblasStatus
-clblasZcopy(
-    size_t N,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-	{
-		CLBlasKargs kargs;
+// clblasStatus
+// clblasZcopy(
+//     size_t N,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// 	{
+// 		CLBlasKargs kargs;
 
-		#ifdef DEBUG_COPY
-		printf("\nZCOPY Called\n");
-		#endif
+// 		#ifdef DEBUG_COPY
+// 		printf("\nZCOPY Called\n");
+// 		#endif
 
-		memset(&kargs, 0, sizeof(kargs));
-		kargs.dtype = TYPE_COMPLEX_DOUBLE;
+// 		memset(&kargs, 0, sizeof(kargs));
+// 		kargs.dtype = TYPE_COMPLEX_DOUBLE;
 
-		return doCopy(&kargs, N, X, offx, incx, Y, offy, incy,
-						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
-	}
+// 		return doCopy(&kargs, N, X, offx, incx, Y, offy, incy,
+// 						numCommandQueues, commandQueues, numEventsInWaitList, eventWaitList, events);
+// 	}

@@ -207,37 +207,37 @@ clblasCgemv(
                   numEventsInWaitList, eventWaitList, events);
 }
 
-clblasStatus
-clblasZgemv(
-    clblasOrder order,
-    clblasTranspose transA,
-    size_t M,
-    size_t N,
-    DoubleComplex alpha,
-    const cl_mem A,
-    size_t offA,
-    size_t lda,
-    const cl_mem x,
-    size_t offx,
-    int incx,
-    DoubleComplex beta,
-    cl_mem y,
-    size_t offy,
-    int incy,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-{
-    CLBlasKargs kargs;
+// clblasStatus
+// clblasZgemv(
+//     clblasOrder order,
+//     clblasTranspose transA,
+//     size_t M,
+//     size_t N,
+//     DoubleComplex alpha,
+//     const cl_mem A,
+//     size_t offA,
+//     size_t lda,
+//     const cl_mem x,
+//     size_t offx,
+//     int incx,
+//     DoubleComplex beta,
+//     cl_mem y,
+//     size_t offy,
+//     int incy,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// {
+//     CLBlasKargs kargs;
 
-    memset(&kargs, 0, sizeof(kargs));
-    kargs.dtype = TYPE_COMPLEX_DOUBLE;
-    kargs.alpha.argDoubleComplex = alpha;
-    kargs.beta.argDoubleComplex = beta;
+//     memset(&kargs, 0, sizeof(kargs));
+//     kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//     kargs.alpha.argDoubleComplex = alpha;
+//     kargs.beta.argDoubleComplex = beta;
 
-    return doGemv(&kargs, order, transA, M, N, A, offA, lda, x, offx, incx,
-                  y, offy, incy, numCommandQueues, commandQueues,
-                  numEventsInWaitList, eventWaitList, events);
-}
+//     return doGemv(&kargs, order, transA, M, N, A, offA, lda, x, offx, incx,
+//                   y, offy, incy, numCommandQueues, commandQueues,
+//                   numEventsInWaitList, eventWaitList, events);
+// }

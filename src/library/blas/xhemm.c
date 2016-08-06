@@ -73,42 +73,42 @@ clblasChemm(
 						eventWaitList, events, CLBLAS_HEMM);
 	}
 
-clblasStatus
-clblasZhemm(
-    clblasOrder order,
-    clblasSide side,
-    clblasUplo uplo,
-    size_t M,
-    size_t N,
-    cl_double2 alpha,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    const cl_mem B,
-    size_t offb,
-    size_t ldb,
-    cl_double2 beta,
-    cl_mem C,
-    size_t offc,
-    size_t ldc,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events)
-	{
-        CLBlasKargs kargs;
+// clblasStatus
+// clblasZhemm(
+//     clblasOrder order,
+//     clblasSide side,
+//     clblasUplo uplo,
+//     size_t M,
+//     size_t N,
+//     cl_double2 alpha,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     const cl_mem B,
+//     size_t offb,
+//     size_t ldb,
+//     cl_double2 beta,
+//     cl_mem C,
+//     size_t offc,
+//     size_t ldc,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events)
+// 	{
+//         CLBlasKargs kargs;
 
-		#ifdef DEBUG_HEMM
-		printf("Zhemm called\n");
-		#endif
-    	memset(&kargs, 0, sizeof(kargs));
-    	kargs.dtype = TYPE_COMPLEX_DOUBLE;
-    	kargs.alpha.argDoubleComplex = alpha;
-    	kargs.beta.argDoubleComplex  = beta;
+// 		#ifdef DEBUG_HEMM
+// 		printf("Zhemm called\n");
+// 		#endif
+//     	memset(&kargs, 0, sizeof(kargs));
+//     	kargs.dtype = TYPE_COMPLEX_DOUBLE;
+//     	kargs.alpha.argDoubleComplex = alpha;
+//     	kargs.beta.argDoubleComplex  = beta;
 
-    	return doSymm(	&kargs, order, uplo, side, M, N, A, offa, lda, B, offb, ldb, C, offc, ldc,
-						numCommandQueues, commandQueues, numEventsInWaitList,
-						eventWaitList, events, CLBLAS_HEMM);
-	}
+//     	return doSymm(	&kargs, order, uplo, side, M, N, A, offa, lda, B, offb, ldb, C, offc, ldc,
+// 						numCommandQueues, commandQueues, numEventsInWaitList,
+// 						eventWaitList, events, CLBLAS_HEMM);
+// 	}
 
