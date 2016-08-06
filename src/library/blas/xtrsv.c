@@ -593,36 +593,36 @@ clblasCtrsv(
 //                    numEventsInWaitList, eventWaitList, events);
 // }
 
-// clblasStatus
-// clblasStpsv(
-//     clblasOrder order,
-//     clblasUplo uplo,
-//     clblasTranspose trans,
-//     clblasDiag diag,
-//     size_t N,
-//     const cl_mem A,
-//     size_t offa,
-//     cl_mem X,
-//     size_t offx,
-//     int incx,
-//     cl_uint numCommandQueues,
-//     cl_command_queue *commandQueues,
-//     cl_uint numEventsInWaitList,
-//     const cl_event *eventWaitList,
-//     cl_event *events)
-// {
-//     CLBlasKargs kargs;
-//     #ifdef DEBUG_TRSV
-//     printf("STPSV Called\n");
-//     #endif
+clblasStatus
+clblasStpsv(
+    clblasOrder order,
+    clblasUplo uplo,
+    clblasTranspose trans,
+    clblasDiag diag,
+    size_t N,
+    const cl_mem A,
+    size_t offa,
+    cl_mem X,
+    size_t offx,
+    int incx,
+    cl_uint numCommandQueues,
+    cl_command_queue *commandQueues,
+    cl_uint numEventsInWaitList,
+    const cl_event *eventWaitList,
+    cl_event *events)
+{
+    CLBlasKargs kargs;
+    #ifdef DEBUG_TRSV
+    printf("STPSV Called\n");
+    #endif
 
-//     memset(&kargs, 0, sizeof(kargs));
-//     kargs.dtype = TYPE_FLOAT;
-//     kargs.pigFuncID = CLBLAS_TPSV;
+    memset(&kargs, 0, sizeof(kargs));
+    kargs.dtype = TYPE_FLOAT;
+    kargs.pigFuncID = CLBLAS_TPSV;
 
-//     return doTrsv(&kargs, order, uplo, trans, diag, N, A, offa, 0, X, offx, incx, numCommandQueues, commandQueues,
-//                    numEventsInWaitList, eventWaitList, events);
-// }
+    return doTrsv(&kargs, order, uplo, trans, diag, N, A, offa, 0, X, offx, incx, numCommandQueues, commandQueues,
+                   numEventsInWaitList, eventWaitList, events);
+}
 
 clblasStatus
 clblasDtpsv(

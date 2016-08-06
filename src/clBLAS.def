@@ -23,150 +23,113 @@ EXPORTS
 
 	clblasSgemv
 	clblasDgemv
-	clblasCgemv
 
 	clblasSsymv
 	clblasDsymv
 
 	clblasSgemm
 	clblasDgemm
-	clblasCgemm
 	;GEMMV2 is not exported
     ;clblasSgemmV2
 	;clblasDgemmV2
-	;clblasCgemmV2
 
 	clblasStrmm
 	clblasDtrmm
-	clblasCtrmm
 
 	clblasStrsm
 	clblasDtrsm
-	clblasCtrsm
 
 	clblasSsyr2k
 	clblasDsyr2k
-	clblasCsyr2k
 
 	clblasSsyrk
 	clblasDsyrk
-	clblasCsyrk
 
 	;GEMMV2 is not exported
 	;clblasSgemmExV2
 	;clblasDgemmExV2
-	;clblasCgemmExV2
 
 	clblasStrmv
 	clblasDtrmv
-	clblasCtrmv
 	
 	clblasStrsv
 	clblasDtrsv
-	clblasCtrsv
 	
 	clblasStpsv
     clblasDtpsv
-    clblasCtpsv
     
 	clblasSsymm
 	clblasDsymm
-	clblasCsymm
 	
 	clblasSger
 	clblasDger
 	
-	clblasCgeru
 	
-	clblasCgerc
 	
 	clblasSsyr
 	clblasDsyr
 	
-	clblasCher
 	
 	clblasSsyr2
 	clblasDsyr2
 
-	clblasChemv
 	
-	clblasCher2
 
-	clblasChemm
 	
-	clblasCherk
 	
 	clblasStpmv
 	clblasDtpmv
-	clblasCtpmv
 	
 	clblasSspmv
 	clblasDspmv
 	
-	clblasChpmv
 	
 	clblasSspr
 	clblasDspr
 	
-	clblasChpr
 	
 	clblasSspr2
 	clblasDspr2
 
-	clblasChpr2
 	
 	clblasSgbmv
 	clblasDgbmv
-	clblasCgbmv
 	
 	clblasStbmv
 	clblasDtbmv
-	clblasCtbmv
 	
 	clblasSsbmv
 	clblasDsbmv
 	
-	clblasChbmv
 	
 	clblasStbsv
 	clblasDtbsv
-	clblasCtbsv
 	
-	clblasCher2k
 
 	clblasSswap
 	clblasDswap
-	clblasCswap
 	
 	clblasSscal
 	clblasDscal
-	clblasCscal
 	
-	clblasCsscal
 	
 	clblasScopy
 	clblasDcopy
-	clblasCcopy
 	
 	clblasSaxpy
 	clblasDaxpy
-	clblasCaxpy
 	
 	clblasSdot
 	clblasDdot
-	clblasCdotu
-	clblasCdotc
 
     clblasSrotg
 	clblasDrotg
-	clblasCrotg
 	
 	clblasSrotmg
 	clblasDrotmg
 	
 	clblasSrot
 	clblasDrot
-	clblasCsrot
 	
 	clblasSrotm
 	clblasDrotm
