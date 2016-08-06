@@ -3338,27 +3338,27 @@ clblasChemv(
  *
  * @ingroup HEMV
  */
-clblasStatus
-clblasZhemv(
-    clblasOrder order,
-    clblasUplo uplo,
-    size_t N,
-    DoubleComplex alpha,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    DoubleComplex beta,
-    cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZhemv(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     size_t N,
+//     DoubleComplex alpha,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     DoubleComplex beta,
+//     cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 /**
  * @example example_zhemv.cpp
  * Example of how to use the @ref clblasZhemv function.
@@ -4540,23 +4540,23 @@ clblasCher(
  *
  * @ingroup HER
  */
-clblasStatus
-clblasZher(
-    clblasOrder order,
-    clblasUplo uplo,
-    size_t N,
-    cl_double alpha,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-	cl_mem A,
-    size_t offa,
-    size_t lda,
-    cl_uint numCommandQueues,
-    cl_command_queue* commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event* eventWaitList,
-    cl_event* events);
+// clblasStatus
+// clblasZher(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     size_t N,
+//     cl_double alpha,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+// 	cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     cl_uint numCommandQueues,
+//     cl_command_queue* commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event* eventWaitList,
+//     cl_event* events);
 /*@}*/
 
 /**
@@ -4835,26 +4835,26 @@ clblasCher2(
  *
  * @ingroup HER2
  */
-clblasStatus
-clblasZher2(
-    clblasOrder order,
-    clblasUplo uplo,
-    size_t N,
-    cl_double2 alpha,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    const cl_mem Y,
-    size_t offy,
-    int incy,
-	cl_mem A,
-    size_t offa,
-    size_t lda,
-    cl_uint numCommandQueues,
-    cl_command_queue* commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event* eventWaitList,
-    cl_event* events);
+// clblasStatus
+// clblasZher2(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     size_t N,
+//     cl_double2 alpha,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     const cl_mem Y,
+//     size_t offy,
+//     int incy,
+// 	cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     cl_uint numCommandQueues,
+//     cl_command_queue* commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event* eventWaitList,
+//     cl_event* events);
 
 /**
  * @example example_zher2.c
@@ -5641,26 +5641,26 @@ clblasChpmv(
  *
  * @ingroup HPMV
  */
-clblasStatus
-clblasZhpmv(
-    clblasOrder order,
-    clblasUplo uplo,
-    size_t N,
-    cl_double2 alpha,
-    const cl_mem AP,
-    size_t offa,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    cl_double2 beta,
-    cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZhpmv(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     size_t N,
+//     cl_double2 alpha,
+//     const cl_mem AP,
+//     size_t offa,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_double2 beta,
+//     cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 /*@}*/
 
 
@@ -5897,22 +5897,22 @@ clblasChpr(
  *
  * @ingroup HPR
  */
-clblasStatus
-clblasZhpr(
-    clblasOrder order,
-    clblasUplo uplo,
-    size_t N,
-    cl_double alpha,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    cl_mem AP,
-    size_t offa,
-    cl_uint numCommandQueues,
-    cl_command_queue* commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event* eventWaitList,
-    cl_event* events);
+// clblasStatus
+// clblasZhpr(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     size_t N,
+//     cl_double alpha,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_mem AP,
+//     size_t offa,
+//     cl_uint numCommandQueues,
+//     cl_command_queue* commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event* eventWaitList,
+//     cl_event* events);
 /*@}*/
 
 /**
@@ -6167,25 +6167,25 @@ clblasChpr2(
  *
  * @ingroup HPR2
  */
-clblasStatus
-clblasZhpr2(
-    clblasOrder order,
-    clblasUplo uplo,
-    size_t N,
-    cl_double2 alpha,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    const cl_mem Y,
-    size_t offy,
-    int incy,
-	cl_mem AP,
-    size_t offa,
-    cl_uint numCommandQueues,
-    cl_command_queue* commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event* eventWaitList,
-    cl_event* events);
+// clblasStatus
+// clblasZhpr2(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     size_t N,
+//     cl_double2 alpha,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     const cl_mem Y,
+//     size_t offy,
+//     int incy,
+// 	cl_mem AP,
+//     size_t offa,
+//     cl_uint numCommandQueues,
+//     cl_command_queue* commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event* eventWaitList,
+//     cl_event* events);
 
 /**
  * @example example_zhpr2.c
@@ -7039,28 +7039,28 @@ clblasChbmv(
  *
  * @ingroup HBMV
  */
-clblasStatus
-clblasZhbmv(
-    clblasOrder order,
-    clblasUplo uplo,
-    size_t N,
-    size_t K,
-    cl_double2 alpha,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    cl_double2 beta,
-    cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZhbmv(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     size_t N,
+//     size_t K,
+//     cl_double2 alpha,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_double2 beta,
+//     cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 /*@}*/
 
@@ -9301,29 +9301,29 @@ clblasChemm(
  *
  * @ingroup HEMM
  */
-clblasStatus
-clblasZhemm(
-    clblasOrder order,
-    clblasSide side,
-    clblasUplo uplo,
-    size_t M,
-    size_t N,
-    cl_double2 alpha,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    const cl_mem B,
-    size_t offb,
-    size_t ldb,
-    cl_double2 beta,
-    cl_mem C,
-    size_t offc,
-    size_t ldc,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZhemm(
+//     clblasOrder order,
+//     clblasSide side,
+//     clblasUplo uplo,
+//     size_t M,
+//     size_t N,
+//     cl_double2 alpha,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     const cl_mem B,
+//     size_t offb,
+//     size_t ldb,
+//     cl_double2 beta,
+//     cl_mem C,
+//     size_t offc,
+//     size_t ldc,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 /*@}*/
 
 
@@ -9454,26 +9454,26 @@ clblasCherk(
  *
  * @ingroup HERK
  */
-clblasStatus
-clblasZherk(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose transA,
-    size_t N,
-    size_t K,
-    double alpha,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    double beta,
-    cl_mem C,
-    size_t offc,
-    size_t ldc,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZherk(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose transA,
+//     size_t N,
+//     size_t K,
+//     double alpha,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     double beta,
+//     cl_mem C,
+//     size_t offc,
+//     size_t ldc,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 /*@}*/
 
 
@@ -9619,29 +9619,29 @@ clblasCher2k(
  *
  * @ingroup HER2K
  */
-clblasStatus
-clblasZher2k(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose trans,
-    size_t N,
-    size_t K,
-    DoubleComplex alpha,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    const cl_mem B,
-    size_t offb,
-    size_t ldb,
-    cl_double beta,
-    cl_mem C,
-    size_t offc,
-    size_t ldc,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZher2k(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose trans,
+//     size_t N,
+//     size_t K,
+//     DoubleComplex alpha,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     const cl_mem B,
+//     size_t offb,
+//     size_t ldb,
+//     cl_double beta,
+//     cl_mem C,
+//     size_t offc,
+//     size_t ldc,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 /*@}*/
 
 
