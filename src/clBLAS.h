@@ -406,20 +406,20 @@ clblasCswap(
  *
  * @ingroup SWAP
  */
-clblasStatus
-clblasZswap(
-    size_t N,
-    cl_mem X,
-    size_t offx,
-    int incx,
-    cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZswap(
+//     size_t N,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 /*@}*/
 
@@ -592,18 +592,18 @@ clblasCscal(
  *
  * @ingroup SCAL
  */
-clblasStatus
-clblasZscal(
-    size_t N,
-    cl_double2 alpha,
-    cl_mem X,
-    size_t offx,
-    int incx,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZscal(
+//     size_t N,
+//     cl_double2 alpha,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 /*@}*/
 
@@ -699,18 +699,18 @@ clblasCsscal(
  *
  * @ingroup SSCAL
  */
-clblasStatus
-clblasZdscal(
-    size_t N,
-    cl_double alpha,
-    cl_mem X,
-    size_t offx,
-    int incx,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZdscal(
+//     size_t N,
+//     cl_double alpha,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
  /*@}*/
 
@@ -902,20 +902,20 @@ clblasCcopy(
  *
  * @ingroup COPY
  */
-clblasStatus
-clblasZcopy(
-    size_t N,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZcopy(
+//     size_t N,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
  /*@}*/
 
@@ -1113,21 +1113,21 @@ clblasCaxpy(
  *
  * @ingroup AXPY
  */
-clblasStatus
-clblasZaxpy(
-    size_t N,
-    cl_double2 alpha,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZaxpy(
+//     size_t N,
+//     cl_double2 alpha,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 /*@}*/
 
@@ -1342,23 +1342,23 @@ clblasCdotu(
  * @ingroup DOT
  */
 
-clblasStatus
-clblasZdotu(
-    size_t N,
-    cl_mem dotProduct,
-    size_t offDP,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    const cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_mem scratchBuff,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZdotu(
+//     size_t N,
+//     cl_mem dotProduct,
+//     size_t offDP,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     const cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_mem scratchBuff,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 
 /**
@@ -1444,23 +1444,23 @@ clblasCdotc(
  * @ingroup DOT
  */
 
-clblasStatus
-clblasZdotc(
-    size_t N,
-    cl_mem dotProduct,
-    size_t offDP,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    const cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_mem scratchBuff,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZdotc(
+//     size_t N,
+//     cl_mem dotProduct,
+//     size_t offDP,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     const cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_mem scratchBuff,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 /*@}*/
 
@@ -1654,21 +1654,21 @@ clblasCrotg(
  *
  * @ingroup ROTG
  */
-clblasStatus
-clblasZrotg(
-    cl_mem CA,
-    size_t offCA,
-    cl_mem CB,
-    size_t offCB,
-    cl_mem C,
-    size_t offC,
-    cl_mem S,
-    size_t offS,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZrotg(
+//     cl_mem CA,
+//     size_t offCA,
+//     cl_mem CB,
+//     size_t offCB,
+//     cl_mem C,
+//     size_t offC,
+//     cl_mem S,
+//     size_t offS,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 /*@}*/
 
@@ -2007,22 +2007,22 @@ clblasCsrot(
  *
  * @ingroup ROT
  */
-clblasStatus
-clblasZdrot(
-    size_t N,
-    cl_mem X,
-    size_t offx,
-    int incx,
-    cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_double C,
-    cl_double S,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZdrot(
+//     size_t N,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_double C,
+//     cl_double S,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 /*@}*/
 
@@ -2352,20 +2352,20 @@ clblasScnrm2(
  *
  * @ingroup NRM2
  */
-clblasStatus
-clblasDznrm2(
-    size_t N,
-    cl_mem NRM2,
-    size_t offNRM2,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    cl_mem scratchBuff,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasDznrm2(
+//     size_t N,
+//     cl_mem NRM2,
+//     size_t offNRM2,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_mem scratchBuff,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 /*@}*/
 
@@ -3048,28 +3048,28 @@ clblasCgemv(
  *
  * @ingroup GEMV
  */
-clblasStatus
-clblasZgemv(
-    clblasOrder order,
-    clblasTranspose transA,
-    size_t M,
-    size_t N,
-    DoubleComplex alpha,
-    const cl_mem A,
-    size_t offA,
-    size_t lda,
-    const cl_mem x,
-    size_t offx,
-    int incx,
-    DoubleComplex beta,
-    cl_mem y,
-    size_t offy,
-    int incy,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZgemv(
+//     clblasOrder order,
+//     clblasTranspose transA,
+//     size_t M,
+//     size_t N,
+//     DoubleComplex alpha,
+//     const cl_mem A,
+//     size_t offA,
+//     size_t lda,
+//     const cl_mem x,
+//     size_t offx,
+//     int incx,
+//     DoubleComplex beta,
+//     cl_mem y,
+//     size_t offy,
+//     int incy,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 /*@}*/
 
@@ -3593,25 +3593,25 @@ clblasCtrmv(
  * @return The same result as the clblasDtrmv() function.
  * @ingroup TRMV
  */
-clblasStatus
-clblasZtrmv(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose trans,
-    clblasDiag diag,
-    size_t N,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    cl_mem X,
-    size_t offx,
-    int incx,
-	cl_mem scratchBuff,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZtrmv(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose trans,
+//     clblasDiag diag,
+//     size_t N,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+// 	cl_mem scratchBuff,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 
 /*@}*/
@@ -3832,24 +3832,24 @@ clblasCtrsv(
  *
  * @ingroup TRSV
  */
-clblasStatus
-clblasZtrsv(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose trans,
-    clblasDiag diag,
-    size_t N,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    cl_mem X,
-    size_t offx,
-    int incx,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZtrsv(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose trans,
+//     clblasDiag diag,
+//     size_t N,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 /*@}*/
 
@@ -4127,26 +4127,26 @@ clblasCgeru(
  *
  * @ingroup GERU
  */
-clblasStatus
-clblasZgeru(
-    clblasOrder order,
-    size_t M,
-    size_t N,
-    cl_double2 alpha,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    const cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_mem A,
-    size_t offa,
-    size_t lda,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZgeru(
+//     clblasOrder order,
+//     size_t M,
+//     size_t N,
+//     cl_double2 alpha,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     const cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 /*@}*/
 
 /**
@@ -4273,26 +4273,26 @@ clblasCgerc(
  *
  * @ingroup GERC
  */
-clblasStatus
-clblasZgerc(
-    clblasOrder order,
-    size_t M,
-    size_t N,
-    cl_double2 alpha,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    const cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_mem A,
-    size_t offa,
-    size_t lda,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZgerc(
+//     clblasOrder order,
+//     size_t M,
+//     size_t N,
+//     cl_double2 alpha,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     const cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 
 /*@}*/
@@ -5077,24 +5077,24 @@ clblasCtpmv(
  * @return The same result as the clblasDtpmv() function.
  * @ingroup TPMV
  */
-clblasStatus
-clblasZtpmv(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose trans,
-    clblasDiag diag,
-    size_t N,
-    const cl_mem AP,
-    size_t offa,
-    cl_mem X,
-    size_t offx,
-    int incx,
-	cl_mem scratchBuff,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZtpmv(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose trans,
+//     clblasDiag diag,
+//     size_t N,
+//     const cl_mem AP,
+//     size_t offa,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+// 	cl_mem scratchBuff,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 /*@}*/
 
 
@@ -5352,23 +5352,23 @@ clblasCtpsv(
  * @ingroup TPSV
  */
 
-clblasStatus
-clblasZtpsv(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose trans,
-    clblasDiag diag,
-    size_t N,
-    const cl_mem A,
-    size_t offa,
-    cl_mem X,
-    size_t offx,
-    int incx,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZtpsv(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose trans,
+//     clblasDiag diag,
+//     size_t N,
+//     const cl_mem A,
+//     size_t offa,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 /*@}*/
 
 
@@ -6469,30 +6469,30 @@ clblasCgbmv(
  *
  * @ingroup GBMV
  */
-clblasStatus
-clblasZgbmv(
-    clblasOrder order,
-    clblasTranspose trans,
-    size_t M,
-    size_t N,
-    size_t KL,
-    size_t KU,
-    cl_double2 alpha,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    const cl_mem X,
-    size_t offx,
-    int incx,
-    cl_double2 beta,
-    cl_mem Y,
-    size_t offy,
-    int incy,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZgbmv(
+//     clblasOrder order,
+//     clblasTranspose trans,
+//     size_t M,
+//     size_t N,
+//     size_t KL,
+//     size_t KU,
+//     cl_double2 alpha,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     const cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_double2 beta,
+//     cl_mem Y,
+//     size_t offy,
+//     int incy,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 /*@}*/
 
 
@@ -6734,26 +6734,26 @@ clblasCtbmv(
  *
  * @ingroup TBMV
  */
-clblasStatus
-clblasZtbmv(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose trans,
-    clblasDiag diag,
-    size_t N,
-    size_t K,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    cl_mem X,
-    size_t offx,
-    int incx,
-    cl_mem scratchBuff,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZtbmv(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose trans,
+//     clblasDiag diag,
+//     size_t N,
+//     size_t K,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_mem scratchBuff,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 /*@}*/
 
 
@@ -7286,25 +7286,25 @@ clblasCtbsv(
  *
  * @ingroup TBSV
  */
-clblasStatus
-clblasZtbsv(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose trans,
-    clblasDiag diag,
-    size_t N,
-    size_t K,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    cl_mem X,
-    size_t offx,
-    int incx,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZtbsv(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose trans,
+//     clblasDiag diag,
+//     size_t N,
+//     size_t K,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     cl_mem X,
+//     size_t offx,
+//     int incx,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 /*@}*/
 
@@ -7610,30 +7610,30 @@ clblasCgemm(
  *
  * @ingroup GEMM
  */
-clblasStatus
-clblasZgemm(
-    clblasOrder order,
-    clblasTranspose transA,
-    clblasTranspose transB,
-    size_t M,
-    size_t N,
-    size_t K,
-    DoubleComplex alpha,
-    const cl_mem A,
-    size_t offA,
-    size_t lda,
-    const cl_mem B,
-    size_t offB,
-    size_t ldb,
-    DoubleComplex beta,
-    cl_mem C,
-    size_t offC,
-    size_t ldc,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZgemm(
+//     clblasOrder order,
+//     clblasTranspose transA,
+//     clblasTranspose transB,
+//     size_t M,
+//     size_t N,
+//     size_t K,
+//     DoubleComplex alpha,
+//     const cl_mem A,
+//     size_t offA,
+//     size_t lda,
+//     const cl_mem B,
+//     size_t offB,
+//     size_t ldb,
+//     DoubleComplex beta,
+//     cl_mem C,
+//     size_t offC,
+//     size_t ldc,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 /*@}*/
 
@@ -7905,27 +7905,27 @@ clblasCtrmm(
  *
  * @ingroup TRMM
  */
-clblasStatus
-clblasZtrmm(
-    clblasOrder order,
-    clblasSide side,
-    clblasUplo uplo,
-    clblasTranspose transA,
-    clblasDiag diag,
-    size_t M,
-    size_t N,
-    DoubleComplex alpha,
-    const cl_mem A,
-    size_t offA,
-    size_t lda,
-    cl_mem B,
-    size_t offB,
-    size_t ldb,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZtrmm(
+//     clblasOrder order,
+//     clblasSide side,
+//     clblasUplo uplo,
+//     clblasTranspose transA,
+//     clblasDiag diag,
+//     size_t M,
+//     size_t N,
+//     DoubleComplex alpha,
+//     const cl_mem A,
+//     size_t offA,
+//     size_t lda,
+//     cl_mem B,
+//     size_t offB,
+//     size_t ldb,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 /*@}*/
 
@@ -8198,27 +8198,27 @@ clblasCtrsm(
  *
  * @ingroup TRSM
  */
-clblasStatus
-clblasZtrsm(
-    clblasOrder order,
-    clblasSide side,
-    clblasUplo uplo,
-    clblasTranspose transA,
-    clblasDiag diag,
-    size_t M,
-    size_t N,
-    DoubleComplex alpha,
-    const cl_mem A,
-    size_t offA,
-    size_t lda,
-    cl_mem B,
-    size_t offB,
-    size_t ldb,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZtrsm(
+//     clblasOrder order,
+//     clblasSide side,
+//     clblasUplo uplo,
+//     clblasTranspose transA,
+//     clblasDiag diag,
+//     size_t M,
+//     size_t N,
+//     DoubleComplex alpha,
+//     const cl_mem A,
+//     size_t offA,
+//     size_t lda,
+//     cl_mem B,
+//     size_t offB,
+//     size_t ldb,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 /*@}*/
 
@@ -8481,26 +8481,26 @@ clblasCsyrk(
  *
  * @ingroup SYRK
  */
-clblasStatus
-clblasZsyrk(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose transA,
-    size_t N,
-    size_t K,
-    DoubleComplex alpha,
-    const cl_mem A,
-    size_t offA,
-    size_t lda,
-    DoubleComplex beta,
-    cl_mem C,
-    size_t offC,
-    size_t ldc,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZsyrk(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose transA,
+//     size_t N,
+//     size_t K,
+//     DoubleComplex alpha,
+//     const cl_mem A,
+//     size_t offA,
+//     size_t lda,
+//     DoubleComplex beta,
+//     cl_mem C,
+//     size_t offC,
+//     size_t ldc,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 
 /*@}*/
 
@@ -8794,29 +8794,29 @@ clblasCsyr2k(
  *
  * @ingroup SYR2K
  */
-clblasStatus
-clblasZsyr2k(
-    clblasOrder order,
-    clblasUplo uplo,
-    clblasTranspose transAB,
-    size_t N,
-    size_t K,
-    DoubleComplex alpha,
-    const cl_mem A,
-    size_t offA,
-    size_t lda,
-    const cl_mem B,
-    size_t offB,
-    size_t ldb,
-    DoubleComplex beta,
-    cl_mem C,
-    size_t offC,
-    size_t ldc,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZsyr2k(
+//     clblasOrder order,
+//     clblasUplo uplo,
+//     clblasTranspose transAB,
+//     size_t N,
+//     size_t K,
+//     DoubleComplex alpha,
+//     const cl_mem A,
+//     size_t offA,
+//     size_t lda,
+//     const cl_mem B,
+//     size_t offB,
+//     size_t ldb,
+//     DoubleComplex beta,
+//     cl_mem C,
+//     size_t offC,
+//     size_t ldc,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 /*@}*/
 
 
@@ -9120,29 +9120,29 @@ clblasCsymm(
  *
  * @ingroup SYMM
  */
-clblasStatus
-clblasZsymm(
-    clblasOrder order,
-    clblasSide side,
-    clblasUplo uplo,
-    size_t M,
-    size_t N,
-    cl_double2 alpha,
-    const cl_mem A,
-    size_t offa,
-    size_t lda,
-    const cl_mem B,
-    size_t offb,
-    size_t ldb,
-    cl_double2 beta,
-    cl_mem C,
-    size_t offc,
-    size_t ldc,
-    cl_uint numCommandQueues,
-    cl_command_queue *commandQueues,
-    cl_uint numEventsInWaitList,
-    const cl_event *eventWaitList,
-    cl_event *events);
+// clblasStatus
+// clblasZsymm(
+//     clblasOrder order,
+//     clblasSide side,
+//     clblasUplo uplo,
+//     size_t M,
+//     size_t N,
+//     cl_double2 alpha,
+//     const cl_mem A,
+//     size_t offa,
+//     size_t lda,
+//     const cl_mem B,
+//     size_t offb,
+//     size_t ldb,
+//     cl_double2 beta,
+//     cl_mem C,
+//     size_t offc,
+//     size_t ldc,
+//     cl_uint numCommandQueues,
+//     cl_command_queue *commandQueues,
+//     cl_uint numEventsInWaitList,
+//     const cl_event *eventWaitList,
+//     cl_event *events);
 /*@}*/
 
 
